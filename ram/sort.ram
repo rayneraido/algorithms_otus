@@ -1,0 +1,66 @@
+<input> 6 1 1 1 1 1 1
+
+read 1 
+load =4
+store 2
+
+loop:
+read *2
+load 2
+add =1
+store 2
+
+load 1
+add =4
+sub 2
+jgtz loop
+
+load =4
+store 2
+
+
+first_loop:
+load 1
+add =4
+sub 2
+jz exit
+
+load 2
+add =1
+store 3
+
+second_loop:
+load 1
+add =4
+sub 3
+jz end_loop
+
+; [j]>[i]
+load *3
+sub *2
+jgtz change_end
+
+load *2
+add *3
+store *2
+sub *3
+store * 3
+load *2
+sub *3
+store *2
+
+change_end:
+
+load 3
+add =1
+store 3
+
+jmp second_loop
+end_loop:
+write *2
+
+load 2
+add =1
+store 2
+jmp first_loop
+exit: halt

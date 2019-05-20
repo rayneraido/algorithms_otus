@@ -1,0 +1,26 @@
+<input> 30 8
+
+read 1 
+read 2
+load =0
+store 3
+
+loop: 
+load 2
+sub 1
+jgtz exit
+
+load 3
+add =1
+store 3
+
+load 1
+sub 2
+store 1
+jmp loop
+
+exit:
+write 3
+write 1
+
+halt
