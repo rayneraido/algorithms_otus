@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import random
-import time
 
 
 def bubble_sort(array):
@@ -87,19 +86,3 @@ def persent_suffle(list, p):
         a, b = random.randint(0, len(list)-1), random.randint(0, len(list)-1)
         list[a], list[b] = list[b], list[a]
     return list
-
-
-
-
-
-
-
-list = [x for x in range(1000)]
-# random.shuffle(list)
-suffled = persent_suffle(list, 0.1)
-
-
-print(suffled)
-start_time = time.time()
-bubble_sort(suffled)
-print(time.time()-start_time)
